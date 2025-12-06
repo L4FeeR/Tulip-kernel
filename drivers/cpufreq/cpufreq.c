@@ -34,7 +34,9 @@
 #include <linux/sched.h>
 #endif
 #include <trace/events/power.h>
-
+#ifdef CONFIG_CPU_FREQ_GOV_ZZMOVE
+	&cpufreq_gov_zzmove, 
+#endif
 static LIST_HEAD(cpufreq_policy_list);
 
 static inline bool policy_is_inactive(struct cpufreq_policy *policy)
